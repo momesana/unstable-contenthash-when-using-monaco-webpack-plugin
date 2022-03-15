@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
-const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const path = require('path');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
@@ -46,14 +45,5 @@ module.exports = {
             title: 'react-js template man',
         }),
         isDevelopment && new ReactRefreshWebpackPlugin(),
-        new MonacoWebpackPlugin({
-            languages: ['cpp', 'csharp', 'python', 'java'],
-            features: [
-                'find',
-                'quickOutline',
-                'hover',
-                'folding',
-            ],
-        }),
     ].filter(Boolean),
 };
